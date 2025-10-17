@@ -1,2 +1,3 @@
 #!/bin/bash
-gcc $CPATH > c
+gcc -E $CFILE -o c
+
