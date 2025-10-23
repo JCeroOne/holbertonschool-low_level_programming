@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * main - Runs the program
  * Return: 0 if succesful
