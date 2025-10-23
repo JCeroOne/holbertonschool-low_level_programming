@@ -8,6 +8,7 @@
  *
  * Return: 1 if it is a digit, 0 otherwise.
  */
-int _isdigit(char c){
+int _isdigit(char c)
+{
 	return (isdigit(c) ? 1 : 0);
 }
