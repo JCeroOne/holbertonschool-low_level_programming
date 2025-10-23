@@ -23,7 +23,7 @@ int main(void)
 		}
 		else 
 		{
-			printf(i);
+			printf("" + i);
 		}
 		printf(" ");
 	}
