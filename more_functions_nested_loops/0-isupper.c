@@ -3,5 +3,5 @@
 #include "main.h"
 
 int _isupper(int c){
-	return isupper(c);
+	return isupper(c) ? 1 : 0;
 }
