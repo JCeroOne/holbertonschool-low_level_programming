@@ -1,4 +1,5 @@
 #include "main.h"
+#include <ctype.h>
 
 /**
  * _atoi - Converts the passed string to an integer.
@@ -11,7 +12,8 @@ int _atoi(char *s)
 
 	while (s[i])
 	{
-		n = n * 10 + (s[i] - '0');
+		if (isdigit(i) != 0)
+			n = n * 10 + (s[i] - '0');
 		i++;
 	}
 
