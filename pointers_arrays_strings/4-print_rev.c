@@ -7,8 +7,8 @@
 void print_rev(char *s)
 {
 	int l = 0;
-	
-	while(s[l])
+
+	while (s[l])
 		l++;
 
 	for (l = l - 1; l >= 0; l--)
