@@ -10,7 +10,7 @@ char *cap_string(char *s)
 {
 	int l = 0;
 	int i;
-	bool capitalized = false;
+	int capitalized = 0;
 
 	while (s[l])
 		l++;
@@ -32,12 +32,12 @@ char *cap_string(char *s)
 				s[i] == '{' ||
 				s[i] == '}'
 		   )
-			capitalized = false;
+			capitalized = 0;
 
-		if (s[i] >= 97 && s[i] <= 122 && !capitalized)
+		if (s[i] >= 97 && s[i] <= 122 && capitalized == 0)
 		{
 			s[i] = s[i] - 32;
-			capitalized = true;
+			capitalized = 1;
 		}
 	}
 
