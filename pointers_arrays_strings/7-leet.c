@@ -16,7 +16,7 @@ char *leet(char *s)
 	{
 		int index;
 
-		for (index = 0; index < letters.length; index++)
+		for (index = 0; index < 10; index++)
 		{
 			if (letters[index] == s[i])
 			{
