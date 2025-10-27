@@ -4,7 +4,9 @@
  * _strcat - Concatenates two strings
  * @dest: The string to add src to.
  * @src: The string to concatenate to dest.
- */
+ *
+ * Return: The pointer to the concatenated string.
+ * /
 char *_strcat(char *dest, char *src)
 {
 	int l = 0;
