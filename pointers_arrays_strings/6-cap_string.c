@@ -34,9 +34,13 @@ char *cap_string(char *s)
 		   )
 			capitalized = 0;
 
-		if (s[i] >= 97 && s[i] <= 122 && capitalized == 0)
+		else if (s[i] >= 97 && s[i] <= 122 && capitalized == 0)
 		{
 			s[i] = s[i] - 32;
+			capitalized = 1;
+		}
+		else if (s[i] >= 65 && s[i] <= 90)
+		{
 			capitalized = 1;
 		}
 	}
