@@ -42,7 +42,7 @@ char *cap_string(char *s)
 			s[i] = s[i] - 32;
 			capitalized = 0;
 		}
-		
+
 		capitalized = 1;
 	}
 
