@@ -9,8 +9,8 @@
 char *leet(char *s)
 {
 	int i;
-	char[] letters = {'a', 'A', 'e', 'E', 'o', 'O', 't', 'T', 'l', 'L'};
-	char[] encoded = {'4', '3', '0', '7', '1'};
+	char letters[] = {'a', 'A', 'e', 'E', 'o', 'O', 't', 'T', 'l', 'L'};
+	char encoded[] = {'4', '3', '0', '7', '1'};
 
 	for (i = 0; s[i]; i++)
 	{
