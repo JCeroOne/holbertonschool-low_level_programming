@@ -8,7 +8,7 @@
  *
  * Return: If found, a pointer to needle. NULL otherwise.
  */
-char *_strstr (char *haystack, char *needle)
+char *_strstr(char *haystack, char *needle)
 {
 	int l = 0;
 	int count = 0;
