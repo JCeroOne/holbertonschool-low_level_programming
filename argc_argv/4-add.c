@@ -15,6 +15,7 @@ int isInt(char *str)
 	{
 		if (!isdigit(*str))
 			return (0);
+		str++;
 	}
 	return (1);
 }
@@ -36,7 +37,7 @@ int main(
 
 	for (i = 0; i < argc; i++)
 	{
-		if (!isInt(argv[i]))
+		if (isInt(argv[i]) == 0)
 		{
 			printf("Error\n");
 			return (1);
