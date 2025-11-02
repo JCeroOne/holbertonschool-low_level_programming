@@ -9,10 +9,10 @@
  */
 int recursive_search(int base, int target)
 {
-	if (target % base == 0)
-		return (0);
 	if (target == base)
 		return (1);
+	if (target % base == 0)
+		return (0);
 	return (recursive_search(base + 2, target));
 }
 /**
