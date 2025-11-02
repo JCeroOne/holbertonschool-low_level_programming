@@ -9,7 +9,7 @@
  * Return: Always 0
  */
 int main(
-		int __attribute__((unused)) argc, 
+		int __attribute__((unused)) argc,
 		char __attribute__((unused)) *argv[]
 	)
 {
