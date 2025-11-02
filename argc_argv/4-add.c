@@ -21,7 +21,7 @@ int isInt(char *str)
 }
 
 /**
- * main - Multiplies two numbers.
+ * main - Adds numbers.
  * @argc: The argument count.
  * @argv: The arguments.
  *
@@ -35,7 +35,7 @@ int main(
 	int i;
 	int sum = 0;
 
-	for (i = 0; i < argc; i++)
+	for (i = 1; i < argc; i++)
 	{
 		if (isInt(argv[i]) == 0)
 		{
