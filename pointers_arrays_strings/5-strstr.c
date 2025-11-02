@@ -28,7 +28,7 @@ char *_strstr (char *haystack, char *needle)
 			count++;
 			if (count == l)
 			{
-				haystack -= count;
+				haystack -= (count - 1);
 				return (haystack);
 			}
 		}
