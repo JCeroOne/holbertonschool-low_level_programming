@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <stddef.h>
 /**
  * _strpbrk - Searches s for the first match of any character in accept.
  * @s: The string to search through.
