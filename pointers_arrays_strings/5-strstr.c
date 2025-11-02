@@ -18,20 +18,19 @@ char *_strstr (char *haystack, char *needle)
 
 	while (1)
 	{
+		if (count == l)
+		{
+			haystack -= (count - 1);
+			return (haystack);
+		}
+
 		if (*haystack == '\0')
 			return (NULL);
 
 		if (*haystack != needle[count])
 			count = 0;
 		else
-		{
 			count++;
-			if (count == l)
-			{
-				haystack -= (count - 1);
-				return (haystack);
-			}
-		}
 
 		haystack++;
 	}
