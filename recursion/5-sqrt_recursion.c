@@ -13,7 +13,7 @@ int recursive_search(int base, int target)
  * _sqrt_recursion - Returns the natural square root of the passed number.
  * @n: The number.
  *
- * Return: If n has no natural square root, -1. Otherwise, the square root of n.
+ * Return: The square root of n, if its an integer. Otherwise, -1.
  */
 int _sqrt_recursion(int n)
 {
