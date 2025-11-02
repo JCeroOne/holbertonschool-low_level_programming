@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _strspn - Returns the number of bytes in s contained in accept before the first non-match.
+ * _strspn - Returns the number of bytes in s contained in accept.
  * @s: The string to search through.
  * @accept: The characters to accept.
  *
