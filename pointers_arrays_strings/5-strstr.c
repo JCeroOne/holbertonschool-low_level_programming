@@ -3,8 +3,8 @@
 
 /**
  * _strstr - Locates needle within haystack.
- * @haystack - The string to search through.
- * @needle - The substring to search for.
+ * @haystack: The string to search through.
+ * @needle: The substring to search for.
  *
  * Return: If found, a pointer to needle. NULL otherwise.
  */
