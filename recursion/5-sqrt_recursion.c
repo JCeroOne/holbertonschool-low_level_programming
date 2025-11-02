@@ -21,5 +21,5 @@ int recursive_search(int base, int target)
 		return (-1);
 	if (base * base == target)
 		return (base);
-	return (recursive_search(base + 1, n));
+	return (recursive_search(base + 1, target));
 }
