@@ -13,7 +13,7 @@ int isInt(char *str)
 {
 	while (*str != '\0')
 	{
-		if (!isdigit(*str))
+		if (isdigit(*str) == 0)
 			return (0);
 		str++;
 	}
