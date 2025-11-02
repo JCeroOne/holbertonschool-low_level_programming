@@ -20,7 +20,7 @@ char *_strstr (char *haystack, char *needle)
 	{
 		if (count == l)
 		{
-			haystack -= (count - 1);
+			haystack -= count;
 			return (haystack);
 		}
 
