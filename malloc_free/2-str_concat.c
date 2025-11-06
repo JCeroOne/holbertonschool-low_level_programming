@@ -43,7 +43,7 @@ char *str_concat(char *s1, char *s2)
 	for (i = ls1; i < ls1 + ls2; i++)
 		str[i] = s2[i - ls1];
 
-	str[i] == '\0';
+	str[i] = '\0';
 
 	return (str);
 }
