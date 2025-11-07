@@ -16,7 +16,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int ls2 = 0;
 	unsigned int limit = n;
 	unsigned int i;
-	char *str;
+	char *str = NULL;
 
 	if (s1 == NULL)
 		ls1 = 0;
@@ -46,6 +46,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	for (i = 0; i < limit; i++)
 		str[ls1 + i] = s2[i];
+
+	str[ls1 + limit] = '\0';
 
 	return (str);
 }
