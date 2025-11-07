@@ -44,10 +44,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		return (NULL);
 
 	for (i = 0; i < ls1; i++)
-		str[i] = ls1[i];
+		str[i] = s1[i];
 
 	for (i = ls1; i < limit; i++)
-		str[i] = ls2[i - ls1];
+		str[i] = s2[i - ls1];
 
 	return (str);
 }
