@@ -26,11 +26,11 @@ int main(
 		exit(99);
 	}
 
-	if((argv[2] == '%' && argv[2] == '/') && argv[3] == '0')
+	if((*argv[2] == '%' && *argv[2] == '/') && *argv[3] == '0')
 	{
 		printf("Error");
 		exit(100);
 	}
 
-	printf("%d", (get_op_func(argv[2]))(argv[1] - '0', argv[3] - '0'));
+	printf("%d", (get_op_func(argv[2]))(*argv[1] - '0', *argv[3] - '0'));
 }
