@@ -4,7 +4,7 @@
 #include <stddef.h>
 
 /**
- * array_iterator - Iterates over an array, and executes the action function on each element.
+ * array_iterator - Iterates over an array, executing "action" on each element.
  * @array: The array to iterate over.
  * @size: The size of the array.
  * @action: The function to execute for each element.
