@@ -6,7 +6,7 @@
  * get_op_func - Returns the appropiate function for the operation.
  * @s: The operator.
  *
- * Returns: The appropiate function for the operation.
+ * Return: The appropiate function for the operation.
  */
 int (*get_op_func(char *s))(int, int)
 {
