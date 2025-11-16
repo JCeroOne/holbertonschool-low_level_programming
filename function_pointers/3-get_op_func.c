@@ -17,7 +17,8 @@ int (*get_op_func(char *s))(int, int)
 		{'/', op_div},
 		{'%', op_mod},
 		{'\0', NULL}
-	}
+	};
+
 	int i = 0;
 
 	while (i < 5)
