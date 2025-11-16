@@ -1,5 +1,9 @@
 #ifndef _3_CALC_H_
 #define _3_CALC_H_
+
+/**
+ * op - Associates an operator with its corresponding function.
+ */
 typedef struct op
 {
 	char op;
