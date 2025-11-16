@@ -26,13 +26,13 @@ int main(
 		exit(99);
 	}
 
-	if((*argv[2] == '%' && *argv[2] == '/') && *argv[3] == '0')
+	if((*argv[2] == '%' && *argv[2] == '/') && atoi(argv[3]) == 0)
 	{
 		printf("Error");
 		exit(100);
 	}
 	
-	printf("%d", (get_op_func(argv[2]))(atoi(argv[1]), atoi(argv[3])));
+	printf("%d\n", (get_op_func(argv[2]))(atoi(argv[1]), atoi(argv[3])));
 	
 	return (0);
 }
