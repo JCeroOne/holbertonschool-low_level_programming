@@ -32,7 +32,6 @@ int main(
 		exit(100);
 	}
 	
-	printf("Args: [%d, %c, %d]", atoi(argv[1]), *argv[2], atoi(argv[3]));
 	printf("%d", (get_op_func(argv[2]))(atoi(argv[1]), atoi(argv[3])));
 	
 	return (0);
