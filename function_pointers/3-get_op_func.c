@@ -20,8 +20,9 @@ int (*get_op_func(char *s))(int, int)
 	};
 
 	int i = 0;
+	int l = 1;
 
-	if (s[1])
+	while (s[l])
 		return (NULL);
 
 	while (i < 5)
