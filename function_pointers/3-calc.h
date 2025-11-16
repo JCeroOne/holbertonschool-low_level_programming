@@ -2,7 +2,7 @@
 #define _3_CALC_H_
 
 /**
- * op - Associates an operator with its corresponding function.
+ * struct p - Associates an operator with its corresponding function.
  * @op: The operator.
  * @f: The function corresponding to the operator.
  */
