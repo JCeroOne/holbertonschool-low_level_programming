@@ -31,7 +31,8 @@ int main(
 		printf("Error");
 		exit(100);
 	}
-
+	
+	printf("Args: [%d, %s, %d]", *argv[1] - '0', *argv[2], *argv[3] - '0');
 	printf("%d", (get_op_func(argv[2]))(*argv[1] - '0', *argv[3] - '0'));
 	
 	return (0);
