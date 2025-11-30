@@ -32,7 +32,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (buffer == NULL)
 		return (0);
 
-	bytesRead = read(file, buffer, sizeof(buffer));
+	bytesRead = read(file, buffer, letters);
 
 	if (bytesRead == -1)
 	{
@@ -42,7 +42,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	current = buffer;
 
-	while (current != NULL)
+	while (*current != NULL)
 	{
 		int wr = _putchar(*current);
 
