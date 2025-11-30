@@ -8,7 +8,8 @@
  */
 void free_list(list_t *head)
 {
-	free_node(head);
+	if (head == NULL)
+		free_node(head);
 }
 
 /**
