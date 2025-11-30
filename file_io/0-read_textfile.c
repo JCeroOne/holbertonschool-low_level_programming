@@ -37,7 +37,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (bytesRead == -1)
 		return (0);
 
-	for (i = 0; i < buffer.length; i++)
+	for (i = 0; i < letters; i++)
 	{
 		int wr = _putchar(buffer[i]);
 		
