@@ -21,4 +21,5 @@ void free_node(list_t *node)
 		free_node(node->next);
 
 	free(node);
+	node = NULL;
 }
