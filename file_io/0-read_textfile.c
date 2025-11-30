@@ -16,7 +16,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	ssize_t bytesRead;
 	int file;
 	size_t i;
-	int printed;
+	ssize_t printed;
 	char *buffer;
 
 	if (filename == NULL)
@@ -39,7 +39,12 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	for (i = 0; i < letters; i++)
 	{
-		int wr = _putchar(buffer[i]);
+		int wr;
+		
+		if (buffer[i] == NULL)
+			break;
+
+		wr = _putchar(buffer[i]);
 		
 		if (wr == -1)
 			return (0);
