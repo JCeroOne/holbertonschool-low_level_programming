@@ -42,7 +42,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	current = buffer;
 
-	while (*current != NULL)
+	while (*current != '\0')
 	{
 		int wr = _putchar(*current);
 
