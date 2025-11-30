@@ -20,6 +20,9 @@ void free_node(list_t *node)
 	if (node->next != NULL)
 		free_node(node->next);
 
+	if (node->str != NULL)
+		free(node->str);
+
 	free(node);
 	node = NULL;
 }
