@@ -46,7 +46,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	for (i = 0; i < (size_t) bytesRead; i++)
 	{
-		if(write(STDOUT_FILENO, buffer[i], sizeof(char)) == -1)
+		if(write(STDOUT_FILENO, *buffer[i], sizeof(char)) == -1)
 		{
 			free(buffer);
 			close(file);
