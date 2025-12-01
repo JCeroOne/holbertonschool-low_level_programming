@@ -63,10 +63,10 @@ ssize_t read_textfile(const char *filename, size_t letters)
  *
  * Return: The number of characters printed
  */
-int writeToStdout(char *buffer, size_t bytesRead)
+ssize_t writeToStdout(char *buffer, size_t bytesRead)
 {
 	size_t i;
-	int printed = 0;
+	ssize_t printed = 0;
 	char *current = buffer;
 
 	for (i = 0; i < (size_t) bytesRead; i++)
@@ -77,5 +77,5 @@ int writeToStdout(char *buffer, size_t bytesRead)
 		printed++;
 		current++;
 	}
-	return (1);
+	return (printed);
 }
