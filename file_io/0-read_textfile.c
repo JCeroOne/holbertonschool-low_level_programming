@@ -17,8 +17,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	int file;
 	ssize_t printed = 0;
 	char *buffer;
-	char *current;
-	size_t i;
 
 	if (filename == NULL)
 		return (0);
@@ -31,7 +29,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	buffer = malloc(letters * sizeof(char));
 
 	if (buffer == NULL)
-	{
+	
 		close(file);
 		return (0);
 	}
@@ -44,23 +42,39 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		close(file);
 		return (0);
 	}
-	
-	current = buffer;
 
-	for (i = 0; i < (size_t) bytesRead; i++)
+	if (writeToStdout(buffer, (size_t) bytesRead == -1))
 	{
-		if(write(STDOUT_FILENO, current, sizeof(char)) == -1)
-		{
-			free(buffer);
-			close(file);
-			return (0);
-		}
-		printed++;
-		current++;
+		close(file);
+		free(buffer);
+		return (0);
 	}
 
 	close(file);
 	free(buffer);
-
 	return (printed);
+}
+
+/**
+ * writeToStdout - A function to write to stdout because of Betty's limits
+ * @buffer: The buffer
+ * @bytesRead: The number of bytes read
+ *
+ * Return: The number of characters printed
+ */
+int writeToStdout(char *buffer, size_t bytesRead)
+{
+	size_t i;
+	int printed = 0;
+	char *current = buffer;
+
+	for (i = 0; i < (size_t) bytesRead; i++)
+	{
+		if(write(STDOUT_FILENO, current, sizeof(char)) == -1)
+			return (-1);
+
+		printed++;
+		current++;
+	}
+	return (1);
 }
