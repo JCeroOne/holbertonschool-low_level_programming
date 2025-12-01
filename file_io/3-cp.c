@@ -21,7 +21,7 @@ int copyBySegments(int from, int to, size_t n)
 	{
 		bytesWritten = write(to, buffer, bytesRead);
 
-		if(bytesWritten != bytesRead)
+		if (bytesWritten != bytesRead)
 		{
 			free(buffer);
 			return (-1);
