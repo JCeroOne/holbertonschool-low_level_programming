@@ -4,6 +4,72 @@
 #include <stdio.h>
 
 /**
+ * _open - Creates the file, if it doesn't exist, and opens it.
+ * @filename: Name of the file
+ * @flags: The flags for the file
+ * @perms: The permissions for the file, if it doesn't exist.
+ *
+ * Return: The file descriptor.
+ */
+int _open(const char *filename, int flags, mode_t perms)
+{
+        int file;
+
+        if (filename == NULL)
+                return (-1);
+
+        file = open(filename, flags);
+
+        if (file == -1)
+        {
+                file = open(filename, O_CREAT | flags, perms);
+
+                if (file == -1)
+                        return (-1);
+        }
+
+        return (file);
+}
+
+/**
+ * copyBySegments - Copies the contents of a file to another file, by segments.
+ * @from: The file descriptor of the source file
+ * @to: The file descriptor of the destination file
+ * @n: The number of bytes per segment
+ *
+ * Return: 1 if succesful, -1 otherwise
+ */
+int copyBySegments(int from, int to, size_t n)
+{
+        ssize_t bytesRead;
+        ssize_t bytesWritten = 0;
+        char *buffer = malloc(n * sizeof(char));
+
+        do
+        {
+                bytesRead = read(from, buffer, n);
+
+                if(bytesRead == -1)
+                {
+                        free(buffer);
+                        return (-1);
+                }
+
+                write(to, buffer, n);
+
+                if(bytesWritten == -1)
+                {
+                        free(buffer);
+                        return (-1);
+                }
+        }
+        while(bytesRead != 0);
+
+        free(buffer);
+        return (1);
+}
+
+/**
  * main - Copies the contents of a file to another
  * @argc: The number of arguments
  * @argv: The arguments
@@ -58,70 +124,4 @@ int main(int argc, char *argv[])
 	}
 
 	return (0);
-}
-
-/**
- * _open - Creates the file, if it doesn't exist, and opens it.
- * @filename: Name of the file
- * @flags: The flags for the file
- * @perms: The permissions for the file, if it doesn't exist.
- *
- * Return: The file descriptor.
- */
-int _open(const char *filename, int flags, mode_t perms)
-{
-	int file;
-
-	if (filename == NULL)
-		return (-1);
-
-	file = open(filename, flags);
-
-	if (file == -1)
-	{
-		file = open(filename, O_CREAT | flags, perms);
-
-		if (file == -1)
-			return (-1);
-	}
-
-	return (file);
-}
-
-/**
- * copyBySegments - Copies the contents of a file to another file, by segments.
- * @from: The file descriptor of the source file
- * @to: The file descriptor of the destination file
- * @n: The number of bytes per segment
- *
- * Return: 1 if succesful, -1 otherwise
- */
-int copyBySegments(int from, int to, size_t n)
-{
-	ssize_t bytesRead;
-	ssize_t bytesWritten;
-	char *buffer = malloc(n * sizeof(char));
-
-	do
-	{
-		bytesRead = read(from, buffer, n);
-
-		if(bytesRead == -1)
-		{
-			free(buffer);
-			return (-1);
-		}
-
-		write(to, buffer, n);
-
-		if(bytesWritten == -1)
-		{
-			free(buffer);
-			return (-1);
-		}
-	}
-	while(bytesRead != 0);
-
-	free(buffer);
-	return (1);
 }
