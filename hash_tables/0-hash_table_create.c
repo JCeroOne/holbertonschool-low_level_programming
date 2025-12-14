@@ -11,8 +11,8 @@
  */
 hash_table_t *hash_table_create(unsigned long int size)
 {
-	hash_table_t *ptr;
-	hash_node_t **arr;
+	hash_table_t *ptr = NULL;
+	hash_node_t **arr = NULL;
 
 	if (size == NULL)
 		return (NULL);
