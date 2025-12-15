@@ -15,17 +15,28 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int index;
 	hash_node_t *element = malloc(sizeof(hash_node_t));
+	hash_node_t *start;
 	hash_node_t *current;
 
 	if (ht == NULL || key == NULL || element == NULL)
 		return (0);
 
 	index = key_index((unsigned char *) key, ht->size);
-	current = ht->array[index];
+	start = ht->array[index];
+	current = start;
+
+	while (current)
+	{
+		if (strcmp(key, current->key)){
+			current->value = strdup(value);
+			return (1);
+		}
+		current++;
+	}
 
 	element->key = strdup(key);
 	element->value = strdup(value);
-	element->next = current;
+	element->next = start;
 
 	ht->array[index] = element;
 
