@@ -32,5 +32,7 @@ void recursive_free(hash_node_t *node)
 	if (node->next != NULL)
 		recursive_free(node->next);
 
+	free(node->key);
+	free(node->value);
 	free(node);
 }
