@@ -39,7 +39,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	free(element->value);
 
-	element->key = strdup(key);
+	element->key = key;
 	element->value = strdup(value);
 	element->next = start;
 
