@@ -1,1 +1,1 @@
-Yes, I'll fill these in... eventually.
+# C: Structures and typedef
